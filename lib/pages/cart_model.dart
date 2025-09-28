@@ -5,10 +5,10 @@ class CartModel extends ChangeNotifier {
   final List _items = [
     ['Avocado', '4.00', 'lib/images/avocado.jpg', Colors.greenAccent],
     ['Banana', '2.00', 'lib/images/banana.jpg', Colors.yellow],
-    ['Grapes', '3.50', 'lib/images/grapes.jpg', Colors.purpleAccent],
-    ['Mango', '5.00', 'lib/images/chicken.jpg', Colors.orangeAccent],
-    ['Orange', '3.00', 'lib/images/pear.jpg', Colors.deepOrangeAccent],
-    ['Strawberry', '4.50', 'lib/images/water.jpg', Colors.redAccent],
+    ['Fruits', '3.50', 'lib/images/fruits.jpeg', Colors.purpleAccent],
+    ['Chicken', '5.00', 'lib/images/chicken.jpg', Colors.orangeAccent],
+    ['Pear', '3.00', 'lib/images/pear.jpg', Colors.deepOrangeAccent],
+    ['Water', '4.50', 'lib/images/water.jpg', Colors.redAccent],
   ];
 
   // Getter

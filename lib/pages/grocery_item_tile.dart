@@ -14,6 +14,23 @@ class GroceryItemTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Container(
+        decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(12)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset(imagePath,height: 64,),
+            Text(itemName,style: TextStyle(fontWeight: FontWeight.bold),),
+            MaterialButton(onPressed: () {
+            },
+            color: Colors.white,
+            child: Text('\$' + itemPrice),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
