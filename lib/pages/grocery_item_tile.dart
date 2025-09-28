@@ -21,7 +21,7 @@ class GroceryItemTile extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset(imagePath,height: 64,),
+            Image.asset(imagePath,fit: BoxFit.cover, height: 150,),
             Text(itemName,style: TextStyle(fontWeight: FontWeight.bold),),
             MaterialButton(onPressed: () {
             },

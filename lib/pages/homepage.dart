@@ -9,6 +9,10 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        backgroundColor: Colors.black,
+        child: Icon(Icons.shopping_bag),),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
