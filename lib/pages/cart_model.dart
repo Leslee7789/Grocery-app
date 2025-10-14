@@ -11,9 +11,31 @@ class CartModel extends ChangeNotifier {
     ['Water', '4.50', 'lib/images/water.jpg', Colors.redAccent],
   ];
 
-  // Getter
+  // Getter for shop items
   List get shopItems => _items;
 
-  // You can add cart-related methods later, e.g.:
-  // void addItem(int index) { ... notifyListeners(); }
+  // List of cart items
+  List cartItems = []; 
+  List get getCartItems => cartItems;
+
+  // Add item to cart
+  void addItemToCart(int index) {
+    cartItems.add(shopItems[index]);
+    notifyListeners();
+  }
+
+  // Remove item from cart
+  void removeItemFromCart(int index) {
+    cartItems.removeAt(index);
+    notifyListeners();
+  }
+
+  // Calculate total price
+  String calculateTotal() {
+    double totalPrice = 0;
+    for (int i = 0; i < cartItems.length; i++) {
+      totalPrice += double.parse(cartItems[i][1]);
+    }
+    return totalPrice.toStringAsFixed(2);
+  }
 }

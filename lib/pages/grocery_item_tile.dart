@@ -5,12 +5,14 @@ class GroceryItemTile extends StatelessWidget {
   final String itemPrice;
   final String imagePath;
   final color;
-  const GroceryItemTile({
+  void Function()? onPressed;
+   GroceryItemTile({
     super.key ,
     required this.itemName,
     required this.itemPrice,
     required this.imagePath,
-    required this.color});
+    required this.color,
+    required this.onPressed,});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +25,8 @@ class GroceryItemTile extends StatelessWidget {
           children: [
             Image.asset(imagePath,fit: BoxFit.cover, height: 150,),
             Text(itemName,style: TextStyle(fontWeight: FontWeight.bold),),
-            MaterialButton(onPressed: () {
-            },
+            MaterialButton(
+              onPressed: onPressed,
             color: Colors.white,
             child: Text('\$' + itemPrice),
             ),

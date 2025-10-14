@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/pages/cart_model.dart';
+import 'package:grocery_app/pages/cart_page.dart';
 import 'package:grocery_app/pages/grocery_item_tile.dart';
 import 'package:provider/provider.dart';
 
@@ -55,6 +56,9 @@ SizedBox(height: 15,),
                     itemPrice: value.shopItems[index][1],
                     imagePath: value.shopItems[index][2],
                     color: value.shopItems[index][3],
+                    onPressed: () {
+                      Provider.of <CartModel>(context, listen: false).addItemToCart(index);
+                    },
                   );
                 });
             }))
