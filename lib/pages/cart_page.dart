@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/pages/cart_model.dart';
+import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -9,16 +11,21 @@ class CartPage extends StatelessWidget {
      appBar: AppBar(
       title: Text('My Cart'),
     ),
-    body: Column(
+    body:Consumer<CartModel>(builder:(context,value,child){
+ return Column(
       children: [
         Expanded(
-          child: ListView.builder(itemBuilder: (context, index) {
+          child: ListView.builder(
+            itemCount:value.cartItems.length ,
+            itemBuilder: (context, index) {
             return ListTile(
-              title: Text('Item'),
+              title: Text(value.cartItems[index][0]),
             );
           },),
           ),
       ],
+    );
+    }
     ),
     );
   }
