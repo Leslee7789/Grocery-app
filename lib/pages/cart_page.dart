@@ -18,8 +18,22 @@ class CartPage extends StatelessWidget {
           child: ListView.builder(
             itemCount:value.cartItems.length ,
             itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(value.cartItems[index][0]),
+            return Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(
+                decoration: BoxDecoration(
+                 color: Colors.grey[200], 
+                ),
+                child: ListTile(
+                  trailing: IconButton(
+                    icon: Icon(Icons.remove_circle),
+                    onPressed: () {
+                      Provider.of<CartModel>(context, listen: false).removeItemFromCart(index);
+                    },
+                  ),
+                  title: Text(value.cartItems[index][0]),
+                ),
+              ),
             );
           },),
           ),
